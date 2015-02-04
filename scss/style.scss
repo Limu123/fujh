@@ -14,12 +14,65 @@
 
 
 
-/* Variables */
+/* Variables & Mixins */
 $red : #FF0000;
+$breakpoint: 788px; // Breakpoint
 
 
+@mixin maxwidth($breakpoint){
+	@media screen and (min-width: $breakpoint){
+	  @content;
+	}
+}
+
+
+
+/* Styles */
 
 body {
 	font-family: 'Arial', sans-serif;
-	color: $red;
 }
+
+
+.wrapper {
+	position: absolute;
+	height: 100%;
+}
+
+// Mainnav
+.blog-menu {
+	background-color: transparent;
+	margin-top: 0;
+	ul li {
+		text-align: right;
+		a[title="meta-nav"]{
+			margin-top: 6rem;
+		}
+	}
+
+}
+
+// set background transparent for mobile menu
+.mobile-menu, .sidebar, .nav-toggle, .mobile-menu {
+	background: transparent;
+}
+
+// set content-background transparent for desktop screens
+.content, .post {
+	@include maxwidth($breakpoint){
+		background: transparent;
+	}
+}
+
+// logo
+.fujh-logo {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 200px;
+	height: 50px;
+	background: black;
+	z-index: 2;
+}
+
+
