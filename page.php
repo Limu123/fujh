@@ -1,7 +1,9 @@
 <?php get_header(); ?>
 
 <div class="content">
-	<div class="fujh-logo">Logo</div>
+	<div class="logo-wrap">
+		<a href="#" class="fujh-logo"></a>
+	</div>
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		

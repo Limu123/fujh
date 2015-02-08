@@ -16,6 +16,8 @@
 
 /* Variables & Mixins */
 $red : #FF0000;
+$black: #000;
+$white: #FFF;
 $breakpoint: 788px; // Breakpoint
 
 
@@ -25,9 +27,69 @@ $breakpoint: 788px; // Breakpoint
 	}
 }
 
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
 
 
 /* Styles */
+
+// Fonts
+.home {
+	h2 {
+		display: none;
+	}
+}
+
+h3 {
+	padding-top: 2rem;
+	span {
+		font-size: 0.7rem;
+		font-weight: 300;
+		float: right;
+		a {
+			cursor: pointer;
+		}
+	}
+}
+
+p {
+	font-size: 1rem;
+}
+
+
+
+
+// logo
+.logo-wrap {
+	@include clearfix;
+	padding: 1rem;
+	//background: #eee;
+	.fujh-logo {
+		float: right;
+		position: relative;
+		display: block;
+		width: 120px;
+		height: 42px;
+		background: url(img/logo_400x132.png) right top no-repeat;
+		background-size: 100% auto;
+		z-index: 2;
+		.home & {
+			width: 300px;
+			height: 140px;
+			background: url(img/logo_600x273.png) right top no-repeat;
+			background-size: 100% auto;
+		}
+	}
+}
+
+
+
 
 body {
 	font-family: 'Arial', sans-serif;
@@ -37,42 +99,136 @@ body {
 .wrapper {
 	position: absolute;
 	height: 100%;
+	background: transparent;
 }
 
 // Mainnav
 .blog-menu {
+	padding: 1.5rem;
 	background-color: transparent;
 	margin-top: 0;
+	font-size: 1.2rem;
 	ul li {
 		text-align: right;
 		a[title="meta-nav"]{
 			margin-top: 6rem;
 		}
 	}
-
+	a:hover {
+		width: 100%;
+		padding: 8px 0;
+	}
 }
+
+.sub-menu {
+	font-size: 0.9rem;
+	display: none;
+	.current-menu-item & {
+		@include maxwidth($breakpoint){
+			display: block;
+		}
+		a {
+			padding: 0.3rem 0;
+			color: $black;
+		}
+	}	
+}
+
+// Menu Arrows
+.has-children > a {
+	&:before {
+		width: 0.8rem;
+		height: 1rem;
+		display: inline-block;
+		background: url(img/sprite.png);
+		background-position: left 5px;
+		background-repeat: no-repeat;
+		content: "";
+	}
+	&:hover:before {
+		background-position: left -13px;
+	}
+}
+.has-children.current-menu-item > a {
+	&:before {
+		background-position: -18px -13px;
+	}
+}
+
+
+
+
 
 // set background transparent for mobile menu
 .mobile-menu, .sidebar, .nav-toggle, .mobile-menu {
 	background: transparent;
 }
 
+.mobile-menu {
+	li {
+		border-color: rgba($white,0.15);
+	}
+	a {
+		color: $white;
+		&:hover {
+			background: transparent !important;
+			color: $black;
+			&:before {
+				background-position: -18px -13px;
+			}
+		}
+		&:before {
+			background-position: -18px 5px;
+		}
+	}
+	.current-menu-item a {
+		color: $black;
+	}
+}
+
+.nav-toggle {
+	p {
+		color: $white;
+	}
+	.bar {
+		background-color: $white;
+	}
+}
+
+
+
+
+// transition
+body a, .blog-menu a, .mobile-menu a {
+	transition: none;
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	-ms-transition: none;
+}
+
+
 // set content-background transparent for desktop screens
+/*
 .content, .post {
 	@include maxwidth($breakpoint){
 		background: transparent;
 	}
 }
+*/
 
-// logo
-.fujh-logo {
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 200px;
-	height: 50px;
-	background: black;
-	z-index: 2;
+
+
+
+
+// post content
+.post-content {
+	img {
+		border: none;
+	}
 }
 
+.post-inner {
+	padding-top: 1rem;
+}
 
