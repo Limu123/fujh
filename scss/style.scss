@@ -141,17 +141,17 @@ body {
 		height: 1rem;
 		display: inline-block;
 		background: url(img/sprite.png);
-		background-position: left 5px;
+		background-position: -18px 5px;
 		background-repeat: no-repeat;
 		content: "";
 	}
 	&:hover:before {
-		background-position: left -13px;
+		background-position: -18px -13px;
 	}
 }
 .has-children.current-menu-item > a {
 	&:before {
-		background-position: -18px -13px;
+		background-position: left -13px;
 	}
 }
 
@@ -183,6 +183,9 @@ body {
 	}
 	.current-menu-item a {
 		color: $black;
+		&:before {
+			background-position: -18px -13px;
+		}	
 	}
 }
 
