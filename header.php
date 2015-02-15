@@ -23,8 +23,8 @@
 				<div class="nav-toggle toggle">
 				
 					<p>
-						<span class="show"><?php _e('Show menu','wilson'); ?></span>
-						<span class="hide"><?php _e('Hide menu','wilson'); ?></span>
+						<span class="show"><?php _e('Menu','wilson'); ?></span>
+						<span class="hide"><?php _e('Menu','wilson'); ?></span>
 					</p>
 				
 					<div class="bars">

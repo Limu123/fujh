@@ -18,7 +18,7 @@
 	  $('h3').each(function(){
 	    var anchor = $(this).html().toLowerCase();
 	    $(this).attr('id', anchor);
-	    $(this).append('<span><a class="scrolltop">Back to top</a></span>');
+	    $(this).append('<span><a class="scrolltop">Nach oben</a></span>');
 	  });
 
 	  // smooth scroll top
