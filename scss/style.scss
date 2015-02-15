@@ -108,6 +108,17 @@ body {
 	background-color: transparent;
 	margin-top: 0;
 	font-size: 1.2rem;
+	position: fixed;
+	left: 0%;
+	top: 80px;
+	width: 32%;
+	@include maxwidth(1101px){
+		width: 27.5%;
+	}
+	@include maxwidth(1350px){
+		width: 371px;
+	}
+
 	ul li {
 		text-align: right;
 		a[title="meta-nav"]{
