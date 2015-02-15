@@ -39,15 +39,16 @@ $breakpoint: 788px; // Breakpoint
 
 /* Styles */
 
-// Fonts
+// Fonts & Lists
 .home {
 	h2 {
 		display: none;
 	}
 }
 
+
 h3 {
-	padding-top: 2rem;
+	padding-top: 2.5rem;
 	span {
 		font-size: 0.7rem;
 		font-weight: 300;
@@ -56,20 +57,56 @@ h3 {
 			cursor: pointer;
 		}
 	}
+	hr + & {
+		padding-top: 0;
+		margin-top: 0 !important;
+	}
 }
+
 
 p {
 	font-size: 1rem;
 }
 
+.content ul {
+	font-size: 1rem;
+	margin-left: 0.2rem;
+	list-style: none;
+	li {
+		margin-bottom: 0.2rem;
+		span {
+			content: "";
+			width: 6px;
+			height: 6px;
+			border-radius: 3px;
+			margin-right: 0.5rem;
+			background-color: red;
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+}
 
+.content ol {
+	font-size: 1rem;
+	li {
+		margin-bottom: 0.2rem;
+	}
+}
+
+
+// Captions
+.post-content .wp-caption-text,
+.post-content .gallery-caption {
+	font-size: 0.8rem;
+	padding-top: 1rem;
+}
 
 
 // logo
 .logo-wrap {
 	@include clearfix;
 	padding: 1rem;
-	//background: #eee;
 	.fujh-logo {
 		float: right;
 		position: relative;
@@ -107,8 +144,8 @@ body {
 	padding: 1.5rem;
 	background-color: transparent;
 	margin-top: 0;
-	font-size: 1.1rem;
 	position: fixed;
+	font-size: 1.1rem;
 	left: 0%;
 	top: 80px;
 	width: 32%;
@@ -222,23 +259,20 @@ body a, .blog-menu a, .mobile-menu a {
 }
 
 
-// set content-background transparent for desktop screens
-/*
-.content, .post {
-	@include maxwidth($breakpoint){
-		background: transparent;
-	}
-}
-*/
-
 
 
 
 
 // post content
 .post-content {
+	font-size: 1rem;
+	line-height: 1.7em;
 	img {
 		border: none;
+	}
+	hr {
+		height: 1px;
+		width: 100%;
 	}
 }
 

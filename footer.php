@@ -14,6 +14,9 @@
 	(function($){
 	  'use strict'
 
+	  // body background color
+	  var bodybackground = $('body').css('background-color');
+
 	  // add an anchor to every section
 	  $('h3').each(function(){
 	    var anchor = $(this).html().toLowerCase();
@@ -36,6 +39,17 @@
 	      }, 500);
 	      return false;
 	  });
+
+
+	  // list bullet-points color
+	  $('.content ul li').prepend('<span>');
+	  $('.content ul li span').css('background-color',bodybackground);
+
+	  // hr color
+	  $('.post-content hr').css('background-color',bodybackground);
+
+	  // link color
+	  $('.post-content a').css('color',bodybackground);
 
 	})(jQuery);
 	
