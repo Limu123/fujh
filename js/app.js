@@ -32,8 +32,8 @@
 
 
     // list bullet-points color
-    $('.content ul li').prepend('<span>');
-    $('.content ul li span').css('background-color',bodybackground);
+    //$('.content ul li').prepend('<span>');
+    //$('.content ul li span').css('background-color',bodybackground);
 
     // hr color
     $('.post-content hr').css('background-color',bodybackground);
