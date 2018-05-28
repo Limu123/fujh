@@ -6,7 +6,7 @@ This is a child-theme of the wordpress theme 'wilson'
 - install theme wilson
 - open a terminal
 - $ cd into theme-folder
-- $ git clone https://github.com/lilynxi/fujh/
+- $ git clone this repo
 - $ cd fujh
 - $ compass compile (this is necessary to compile the scss-file. more on sass and compass can be found here: http://sass-lang.com/, http://compass-style.org/)
 
