@@ -15,3 +15,4 @@ In the wp-admin, install this plugin: https://wordpress.org/plugins/custom-backg
 
 ## Anchors
 The anchor-section has to start with an h3-title and the same html as the anchor-link (#angebot ---> \<h3>Angebot\</h3>)
+
